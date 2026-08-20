@@ -1,0 +1,31 @@
+name: Prepare weekly odds file
+
+on:
+  schedule:
+    - cron: "0 10 * * 2"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prepare next NFL week
+        run: python scripts/prepare_week.py
+      - name: Commit prepared file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add odds/current_odds.csv
+          if git diff --cached --quiet; then
+            echo "No weekly file change."
+          else
+            git commit -m "Prepare upcoming NFL week odds file"
+            git push
+          fi
