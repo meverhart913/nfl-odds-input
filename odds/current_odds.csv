@@ -1,6 +1,6 @@
 season,week,snapshot_label,sportsbook,game_id,away_team,home_team,away_moneyline,home_moneyline,home_spread
-2026,1,Tuesday Opening,FanDuel,2026_01_NE_SEA,NE,SEA,,,
-2026,1,Tuesday Opening,FanDuel,2026_01_SF_LA,SF,LA,,,
+2026,1,Tuesday Opening,FanDuel,2026_01_NE_SEA,NE,SEA,162,-194,-3.5
+2026,1,Tuesday Opening,FanDuel,2026_01_SF_LA,SF,LA,166,-198,-3.5
 2026,1,Tuesday Opening,FanDuel,2026_01_ARI_LAC,ARI,LAC,450,-600,-10.5
 2026,1,Tuesday Opening,FanDuel,2026_01_ATL_PIT,ATL,PIT,136,-162,-3
 2026,1,Tuesday Opening,FanDuel,2026_01_BAL_IND,BAL,IND,-186,156,3.5
