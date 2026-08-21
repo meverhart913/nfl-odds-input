@@ -16,9 +16,9 @@ history.
 5. Commit the change. A clear message such as `Week 1 Friday odds` is best.
 6. In the NFL Betting Tool, select the same season/week and tap **Reload GitHub CSV**.
 
-For Thursday or Monday games, publish `Pregame Closing` shortly before that game's
-kickoff instead of waiting until Sunday. The app records the exact source commit and
-will not allow an official closing prediction to be replaced.
+For `Pregame Closing`, keep only the games about to start. Use separate commits for the
+Thursday, Sunday, and Monday batches. The app records the exact source commit and will
+not allow an official closing prediction to be replaced.
 
 ## CSV contract
 
@@ -30,7 +30,9 @@ season,week,snapshot_label,sportsbook,game_id,away_team,home_team,away_moneyline
 
 Rules:
 
-- One row for every game in the selected NFL week; no extra or duplicate rows.
+- Tuesday and Friday files need one row for every game in the selected NFL week.
+- A `Pregame Closing` file may contain only the game or games about to start.
+- No file may contain extra or duplicate game rows.
 - One season, week, snapshot label, and sportsbook per file.
 - American moneylines must include the sign when positive, such as `+150`; negative
   lines look like `-175`.
